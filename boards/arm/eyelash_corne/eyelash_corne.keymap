@@ -28,9 +28,10 @@
     trigger-period-ms = <16>;
 };
 
+// дока по ключам https://zmk.dev/docs/keymaps/list-of-keycodes
 / {
-    behaviors {
 
+    behaviors {
         conditional_layers {
             compatible = "zmk,conditional-layers";
             adjust_layer {
@@ -71,6 +72,111 @@
         };
     };
 
+    combos {
+        // позиции ключей считаются слева-на-право и сверху-вниз
+        // | 0  |   | 1  |   | 2  |   | 3  |   | 4  |   | 5  |                 | 6|       | 7  |   | 8  |   | 9  |   | 10 |   | 11 |   | 12 | 
+        // | 13 |   | 14 |   | 15 |   | 16 |   | 17 |   | 18 |            |19| |20| |21|  | 22 |   | 23 |   | 24 |   | 25 |   | 26 |   | 27 | 
+        // | 28 |   | 29 |   | 30 |   | 31 |   | 32 |   | 33 |  |34|           |35|       | 36 |   | 37 |   | 38 |   | 39 |   | 40 |   | 41 | 
+        //                            | 42 |   | 43 |   | 44 |                            | 45 |   | 46 |   | 47 |
+
+        compatible = "zmk,combos";
+
+        // Левая
+
+        EscKey {
+            bindings = <&kp ESC>;
+            key-positions = <0 13>;
+            timeout-ms = <20>;
+        };
+
+        TildaSign {
+            bindings = <&kp TILDE>;
+            key-positions = <12 27>;
+            timeout-ms = <20>;
+        };
+
+        GraveSign {
+            bindings = <&kp GRAVE>;
+            key-positions = <27 41>;
+            timeout-ms = <20>;
+        };
+
+        PlusSign {
+            bindings = <&kp PLUS>;
+            key-positions = <2 3>;
+            timeout-ms = <20>;
+        };
+
+        MinusSign {
+            bindings = <&kp MINUS>;
+            key-positions = <3 4>;
+            timeout-ms = <20>;
+        };
+
+        ParaLeft {
+            bindings = <&kp LPAR>;
+            key-positions = <4 5>;
+            timeout-ms = <20>;
+        };
+
+        DoubleQuote {
+            bindings = <&kp DQT>;
+            key-positions = <16 17>;
+            timeout-ms = <20>;
+        };
+
+        BracketLeft {
+            bindings = <&kp LBKT>;
+            key-positions = <17 18>;
+            timeout-ms = <20>;
+        };
+
+        BraceLeft {
+            bindings = <&kp LBRC>;
+            key-positions = <32 33>;
+            timeout-ms = <20>;
+        };
+
+
+        // Правая
+
+        ParaRight {
+            bindings = <&kp RPAR>;
+            key-positions = <7 8>;
+            timeout-ms = <20>;
+        };
+
+        UnderscoreSign {
+            bindings = <&kp UNDER>;
+            key-positions = <8 9>;
+            timeout-ms = <20>;
+        };
+
+        PipeSign {
+            bindings = <&kp PIPE>;
+            key-positions = <9 10>;
+            timeout-ms = <20>;
+        };
+
+        BracketRight {
+            bindings = <&kp RBKT>;
+            key-positions = <22 23>;
+            timeout-ms = <20>;
+        };
+
+        SingleQuote {
+            bindings = <&kp SQT>;
+            key-positions = <23 24>;
+            timeout-ms = <20>;
+        };
+
+        BraceRight {
+            bindings = <&kp RBRC>;
+            key-positions = <36 37>;
+            timeout-ms = <20>;
+        };
+    };
+
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -90,56 +196,46 @@
         default_layer {
             display-name = "basic";
             bindings = <
-&kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T                              &kp UP                &kp Y        &kp U          &kp I          &kp O          &kp P             &kp BSPC
-&td0       &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hmr RSHFT J   &hmr RCTRL K   &hmr RALT L    &hmr RGUI SEMI    &kp SQT
-&kp LCTRL  &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M          &kp COMMA      &kp DOT        &kp FSLH          &kp ESC
-                                     &kp LGUI      &mo 1         &lt 3 SPACE                                              &lt 3 ENTER  &mo 2          &kp RALT
+&kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T                              &kp UP                &kp Y        &kp U         &kp I         &kp O        &kp P           &kp LBKT
+&td0       &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RBKT
+                                     &kp LGUI      &mo 1         &lt 3 SPACE                                              &lt 3 ENTER  &mo 2         &kp BSPC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "number";
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                            &mmv MOVE_UP                          &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &trans           &trans          &trans        &trans        &trans                            &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT        &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF      &kp C_MUTE                   &mmv MOVE_DOWN                        &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                                  &kp INS          &kp DEL          &trans
+&trans  &kp N1    &kp N2       &kp N3    &kp N4    &kp N5                                         &mmv MOVE_UP                       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp EQUAL
+&trans  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT                      &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &trans    &trans       &trans    &trans    &rgb_ug RGB_EFF    &kp C_MUTE                  &mmv MOVE_DOWN                     &trans     &trans    &trans     &trans    &trans    &trans
+                               &trans    &trans    &trans                                                                            &trans     &trans    &kp DEL 
             >;
             sensor-bindings = <&scroll_encoder>;
         };
 
-        raise_layer {
-            display-name = "SYMBOL";
+        move_layer {
+            display-name = "move";
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                           &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                            &kp RET    &trans     &trans
+&trans  &trans  &kp PG_UP  &kp END   &kp UP    &kp HOME                                &mmv MOVE_UP                     &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans   &kp PRINTSCREEN
+&trans  &trans  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &LEFT     &kp DOWN  &kp RIGHT  &kp PG_DN  &trans   &kp F12
+&kp F1  &kp F2  &kp F3     &kp F4    &kp F5    &kp F6     &kp C_MUTE                   &mmv MOVE_DOWN                   &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  &kp F12
+                           &trans    &trans    &trans                                                                   &trans    &trans    &trans
             >;
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
-            display-name = "Fn";
+        // Дока по подсветке https://zmk.dev/docs/keymaps/behaviors/underglow#rgb-action-defines
+        settings_layer {
+            display-name = "settings";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
+&bootloader      &sys_reset       &out OUT_USB     &out OUT_BLE     &out OUT_TOG     &studio_unlock                              &mmv MOVE_UP                      &studio_unlock   &out OUT_TOG     &out OUT_BLE     &out OUT_USB     &sys_reset    &bootloader
+&bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT    &bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0  &bt BT_CLR_ALL
+&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans        &kp C_MUTE                    &mmv MOVE_DOWN                    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans        &trans
+                                                   &trans           &trans           &trans                                                                        &trans           &trans           &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        secret_layer {
-            display-name = "secret";
-            bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                            &mmv MOVE_UP                          &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                      &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT        &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF      &kp C_MUTE                   &mmv MOVE_DOWN                        &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                                  &kp INS          &kp DEL          &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&rgb_encoder>;
         };
 
     };
