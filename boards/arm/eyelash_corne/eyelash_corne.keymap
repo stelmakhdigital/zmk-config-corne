@@ -215,11 +215,11 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        move_layer {
+        raise_layer {
             display-name = "move";
             bindings = <
 &trans  &trans  &kp PG_UP  &kp END   &kp UP    &kp HOME                                &mmv MOVE_UP                     &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans   &kp PRINTSCREEN
-&trans  &trans  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans   &kp F12
+&trans  &trans  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans   &trans
 &kp F1  &kp F2  &kp F3     &kp F4    &kp F5    &kp F6     &kp C_MUTE                   &mmv MOVE_DOWN                   &kp F7    &kp F8    &kp F9     &kp F10    &kp F11  &kp F12
                            &trans    &trans    &trans                                                                   &trans    &trans    &trans
             >;
@@ -232,8 +232,8 @@
             bindings = <
 &bootloader      &sys_reset       &out OUT_USB     &out OUT_BLE     &out OUT_TOG     &studio_unlock                              &mmv MOVE_UP                      &studio_unlock   &out OUT_TOG     &out OUT_BLE     &out OUT_USB     &sys_reset    &bootloader
 &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT    &bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0  &bt BT_CLR_ALL
-&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none        &kp C_MUTE                    &mmv MOVE_DOWN                     &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &none        &none
-                                                   &none           &none           &none                                                                           &none            &none            &none
+&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none        &kp C_MUTE                    &mmv MOVE_DOWN                     &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &none         &trans
+                                                   &none            &none            &none                                                                         &none            &none            &none
             >;
             sensor-bindings = <&rgb_encoder>;
         };
