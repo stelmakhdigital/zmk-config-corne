@@ -43,7 +43,7 @@
             // compatible = "zmk,behavior-tap-dance"; // двойной тап - Caps | одиночный тап - Shift
             compatible = "zmk,behavior-hold-tap";
             display-name = "Shift/Caps";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred"; // только для hold-tap (одиночный тап — Caps | удержание - Shift)
             tapping-term-ms = <200>;
             bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
