@@ -31,34 +31,17 @@
 / {
 
     behaviors {
-        conditional_layers {
-            compatible = "zmk,conditional-layers";
-            adjust_layer {
-                if-layers = <1 2>;
-                then-layer = <4>;
-            };
-        };
 
-        caps: caps_behavior {
-            compatible = "zmk,behavior-key-press";
-            bindings = <&kp CAPS>;
-        };
-
-        shift: shift_behavior {
-            compatible = "zmk,behavior-key-press";
-            bindings = <&kp LEFT_SHIFT>;
-        };
-
-        td0: caps_shift {
-            // compatible = "zmk,behavior-tap-dance"; // двойной тап - Caps | одиночный тап - Shift
-            compatible = "zmk,behavior-hold-tap";
+        td0: shift_to_caps {
             display-name = "Shift/Caps";
-            flavor = "tap-preferred"; // только для hold-tap (одиночный тап — Caps | удержание - Shift)
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&caps &shift>;
+            bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
         };
 
         hml: home_row_mod_left {
+            display-name = "row mode";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -71,6 +54,7 @@
         };
 
         hmr: home_row_mod_right {
+            display-name = "row mode";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
