@@ -39,11 +39,14 @@
             };
         };
 
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        td0: caps_shift {
+            // compatible = "zmk,behavior-tap-dance"; // двойной тап - Caps | одиночный тап - Shift
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Shift/Caps";
+            #binding-cells = <2>;
+            flavor = "tap-preferred"; // только для hold-tap (одиночный тап — Caps | удержание - Shift)
+            tapping-term-ms = <200>;
+            bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
         };
 
         hml: home_row_mod_left {
@@ -53,7 +56,7 @@
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+            //bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <23 24 25 26>;
             hold-trigger-on-release;
         };
@@ -65,7 +68,7 @@
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+            //bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <14 15 16 17>;
             hold-trigger-on-release;
         };
