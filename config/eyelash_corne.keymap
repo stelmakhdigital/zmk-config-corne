@@ -46,7 +46,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred"; // только для hold-tap (одиночный тап — Caps | удержание - Shift)
             tapping-term-ms = <200>;
-            bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
+            bindings = <&kp CAPS &kp LEFT_SHIFT>;
         };
 
         hml: home_row_mod_left {
