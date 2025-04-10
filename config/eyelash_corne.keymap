@@ -38,6 +38,18 @@
                 then-layer = <4>;
             };
         };
+        
+        caps: caps_behavior {
+            compatible = "zmk,behavior-key-press";
+            label = "CAPS";
+            bindings = <&kp CAPS>;
+        };
+
+        shift: shift_behavior {
+            compatible = "zmk,behavior-key-press";
+            label = "SHIFT";
+            bindings = <&kp LEFT_SHIFT>;
+        };
 
         td0: caps_shift {
             // compatible = "zmk,behavior-tap-dance"; // двойной тап - Caps | одиночный тап - Shift
@@ -46,7 +58,7 @@
             #binding-cells = <0>;
             flavor = "tap-preferred"; // только для hold-tap (одиночный тап — Caps | удержание - Shift)
             tapping-term-ms = <200>;
-            bindings = <&kp CAPS &kp LEFT_SHIFT>;
+            bindings = <&caps &shift>;
         };
 
         hml: home_row_mod_left {
