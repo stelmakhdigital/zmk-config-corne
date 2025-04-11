@@ -87,7 +87,7 @@
         // Переключение слоев
         ToogleGameLayer {
             bindings = <&tog_on 5>;
-            key-positions = <12 27 41>;
+            key-positions = <43 46>;
             timeout-ms = <50>;
         };
 
@@ -215,7 +215,7 @@
 &kp TAB      &kp Q        &kp W        &kp E         &kp R         &kp T                              &kp UP                &kp Y        &kp U         &kp I         &kp O        &kp P           &kp LBKT
 &td0         &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
 &kp LCTRL    &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &lt 4 RBKT
-                                     &kp LGUI      &mo 1         &lt 2 SPACE                                              &lt 3 ENTER  &mo 1         &kp BSPC
+                                       &kp LGUI      &mo 1         &lt 2 SPACE                                              &lt 3 ENTER  &mo 1         &kp BSPC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -259,7 +259,7 @@
             bindings = <
 &bootloader      &sys_reset       &out OUT_USB     &out OUT_BLE     &out OUT_TOG     &studio_unlock                              &mmv MOVE_UP                      &studio_unlock   &out OUT_TOG     &out OUT_BLE     &out OUT_USB     &sys_reset    &bootloader
 &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT    &bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0  &bt BT_CLR_ALL
-&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans        &kp C_MUTE                    &mmv MOVE_DOWN                    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &game_layer        &trans
+&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans        &kp C_MUTE                    &mmv MOVE_DOWN                    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans        &trans
                                                    &trans           &trans           &trans                                                                        &trans           &trans           &trans
             >;
             sensor-bindings = <&rgb_encoder>;
