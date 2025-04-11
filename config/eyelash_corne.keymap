@@ -69,7 +69,7 @@
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
-            display-name = "game on";
+            display-name = "toogle layer on";
             toggle-mode = "on";
         };
 
@@ -83,6 +83,19 @@
         //                            | 42 |   | 43 |   | 44 |                            | 45 |   | 46 |   | 47 |
 
         compatible = "zmk,combos";
+
+        // Переключение слоев
+        ToogleGameLayer {
+            bindings = <&tog_on 5>;
+            key-positions = <12 27 41>;
+            timeout-ms = <50>;
+        };
+
+        ToogleBasicLayer {
+            bindings = <&tog_on 0>;
+            key-positions = <0 13 28>;
+            timeout-ms = <50>;
+        };
 
         // Левая
 
