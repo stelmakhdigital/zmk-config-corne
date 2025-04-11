@@ -66,11 +66,13 @@
             hold-trigger-on-release;
         };
 
-        game_layer: toggle_game_layer {
+        tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <5>;
+            #binding-cells = <1>;
+            display-name = "game on";
             toggle-mode = "on";
         };
+
     };
 
     combos {
