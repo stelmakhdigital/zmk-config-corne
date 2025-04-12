@@ -66,13 +66,6 @@
             hold-trigger-on-release;
         };
 
-        tog: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "toogle layer";
-            toggle-mode = "momentary"; // можно опустить для обычного тоггла
-        };
-
     };
 
     combos {
@@ -196,6 +189,7 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // Layer 0
         default_layer {
             display-name = "basic";
             bindings = <
@@ -207,6 +201,7 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
+        // Layer 1
         number_layer {
             display-name = "number";
             bindings = <
@@ -218,6 +213,7 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // Layer 2
         left_move_layer {
             display-name = "l_move";
             bindings = <
@@ -229,6 +225,7 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // Layer 3
         right_move_layer {
             display-name = "r_move";
             bindings = <
@@ -240,6 +237,7 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+        // Layer 4
         // Дока по подсветке https://zmk.dev/docs/keymaps/behaviors/underglow#rgb-action-defines
         settings_layer {
             display-name = "settings";
@@ -252,6 +250,7 @@
             sensor-bindings = <&rgb_encoder>;
         };
 
+        // Layer 5
         game_layer {
             display-name = "game";
             bindings = <
