@@ -244,10 +244,10 @@
         settings_layer {
             display-name = "settings";
             bindings = <
-&bootloader      &sys_reset       &out OUT_USB     &out OUT_BLE     &out OUT_TOG     &studio_unlock                              &mmv MOVE_UP                      &studio_unlock   &out OUT_TOG     &out OUT_BLE     &out OUT_USB     &sys_reset    &bootloader
-&bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT    &bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0  &bt BT_CLR_ALL
-&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans        &kp C_MUTE                    &mmv MOVE_DOWN                    &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans        &trans
-                                                   &trans           &trans           &trans                                                                        &trans           &trans           &trans
+&bootloader      &sys_reset       &out OUT_USB     &out OUT_BLE     &out OUT_TOG     &studio_unlock                         &tog_on 0               &studio_unlock   &out OUT_TOG     &out OUT_BLE     &out OUT_USB     &sys_reset    &bootloader
+&bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                 &kp LEFT  &kp ENTER  &kp RIGHT    &bt BT_SEL 4     &bt BT_SEL 3     &bt BT_SEL 2     &bt BT_SEL 1     &bt BT_SEL 0  &bt BT_CLR_ALL
+&rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans         &kp C_MUTE              &tog_on 5               &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD  &trans        &trans
+                                                   &trans           &trans           &trans                                                         &trans           &trans           &trans
             >;
             sensor-bindings = <&rgb_encoder>;
         };
@@ -258,7 +258,7 @@
 &kp TAB         &kp Q        &kp W        &kp E         &kp R         &kp T                              &tog_on 0             &kp Y        &kp U         &kp I         &kp O        &kp P           &kp LBKT
 &kp LEFT_SHIFT  &kp A        &kp S        &kp D         &kp F         &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J         &kp K         &kp L        &kp SEMI        &kp SQT
 &kp LCTRL       &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &tog_on 5             &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &lt 4 RBKT
-                                          &kp LGUI      &mo 1         &lt 2 SPACE                                              &lt 3 ENTER  &mo 1         &kp BSPC
+                                          &kp LCTRL     &kp SPACE     &kp SPACE                                                &lt 3 ENTER  &mo 1         &kp BSPC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
