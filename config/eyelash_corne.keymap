@@ -87,7 +87,7 @@
         // Переключение слоев
         ToogleGameLayer {
             bindings = <&tog_on 5>;
-            key-positions = <28 41>;
+            key-positions = <44 45>;
             timeout-ms = <50>;
         };
 
