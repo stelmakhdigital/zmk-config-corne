@@ -270,7 +270,7 @@
             bindings = <
 &kp TAB         &kp Q        &kp W        &kp E         &kp R         &kp T                              &kp UP                &kp Y        &kp U         &kp I         &kp O        &kp P           &kp LBKT
 &kp LEFT_SHIFT  &kp A        &kp S        &kp D         &kp F         &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J         &kp K         &kp L        &kp SEMI        &kp SQT
-&kp LCTRL       &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &RBKT
+&kp LCTRL       &kp Z        &kp X        &kp C         &kp V         &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RBKT
                                           &kp LGUI      &mo 1         &lt 2 SPACE                                              &lt 3 ENTER  &mo 1         &kp BSPC
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
