@@ -201,14 +201,24 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
+
+&hmr RSHFT CARET  &hmr RCTRL AMPS  &hmr RALT ASTRK  &hmr RGUI LPAR  &kp SQT
+
+
+&trans  &kp N1    &kp N2       &kp N3    &kp N4    &kp N5                                         &mmv MOVE_UP                       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp EQUAL
+&trans  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT                      &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &kp CARET  &hmr RSHFT AMPS  &hmr RCTRL ASTRK  &hmr RALT LPAR  &hmr RGUI RPAR  &trans
+&trans  &trans    &trans       &trans    &trans    &trans             &kp C_MUTE                  &mmv MOVE_DOWN                     &trans     &trans    &trans     &trans    &trans    &trans
+                               &trans    &trans    &trans                                                                            &trans     &trans    &kp DEL 
+
+
         // Layer 1
         number_layer {
             display-name = "number";
             bindings = <
-&trans  &kp N1    &kp N2       &kp N3    &kp N4    &kp N5                                         &mmv MOVE_UP                       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp EQUAL
-&trans  &kp EXCL  &kp AT_SIGN  &kp HASH  &kp DLLR  &kp PRCNT                      &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans  &trans    &trans       &trans    &trans    &trans             &kp C_MUTE                  &mmv MOVE_DOWN                     &trans     &trans    &trans     &trans    &trans    &trans
-                               &trans    &trans    &trans                                                                            &trans     &trans    &kp DEL 
+&trans  &kp N1          &kp N2             &kp N3           &kp N4           &kp N5                                         &mmv MOVE_UP                       &kp N6     &kp N7           &kp N8            &kp N9          &kp N0          &kp EQUAL
+&trans  &hml LGUI EXCL  &hml LALT AT_SIGN  &hml LCTRL HASH  &hml LSHFT DLLR  &kp PRCNT                      &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT    &kp CARET  &hmr RSHFT AMPS  &hmr RCTRL ASTRK  &hmr RALT LPAR  &hmr RGUI RPAR  &trans 
+&trans  &trans          &trans             &trans           &trans           &trans             &kp C_MUTE                  &mmv MOVE_DOWN                     &trans     &trans           &trans            &trans          &trans          &trans
+                                           &trans           &trans           &trans                                                                                       &trans           &trans            &kp DEL 
             >;
             sensor-bindings = <&scroll_encoder>;
         };
